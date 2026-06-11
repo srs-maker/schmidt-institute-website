@@ -1,163 +1,434 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Schmidt Institute for Instructional Innovation</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CohortView | Schmidt Institute for Instructional Innovation</title>
 
 <style>
+:root {
+  --navy: #0f172a;
+  --blue: #1d4ed8;
+  --green: #16a34a;
+  --light: #f8fafc;
+  --text: #1e293b;
+  --muted: #64748b;
+  --card: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f8fafc;
-    color: #1e293b;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--light);
+  color: var(--text);
+  line-height: 1.6;
 }
 
-header {
-    background: #0f172a;
-    color: white;
-    padding: 80px 20px;
-    text-align: center;
+nav {
+  background: white;
+  padding: 16px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
-h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.tagline {
-    font-size: 1.5rem;
-    color: #93c5fd;
+.nav-brand img {
+  height: 46px;
+  width: auto;
+  border-radius: 6px;
 }
 
-.section {
-    max-width: 1100px;
-    margin: auto;
-    padding: 60px 20px;
+.nav-brand span {
+  font-weight: 700;
+  color: var(--navy);
 }
 
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    gap: 20px;
+.nav-links a {
+  margin-left: 24px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.95rem;
 }
 
-.card {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,.1);
+.hero {
+  background: linear-gradient(135deg, #0f172a, #14532d);
+  color: white;
+  padding: 90px 8%;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin: 0 0 10px;
+}
+
+.hero h2 {
+  font-size: 1.8rem;
+  color: #bbf7d0;
+  margin: 0 0 20px;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  max-width: 650px;
+}
+
+.hero-logo {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 24px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.hero-logo img {
+  width: 100%;
+  border-radius: 16px;
+}
+
+.buttons {
+  margin-top: 28px;
 }
 
 .button {
-    display: inline-block;
-    margin: 10px;
-    padding: 12px 24px;
-    background: #2563eb;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
+  display: inline-block;
+  padding: 13px 22px;
+  margin-right: 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.primary {
+  background: var(--green);
+  color: white;
+}
+
+.secondary {
+  background: white;
+  color: var(--navy);
+}
+
+section {
+  padding: 70px 8%;
+}
+
+.section-title {
+  max-width: 850px;
+  margin-bottom: 35px;
+}
+
+.section-title h2 {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+  color: var(--navy);
+}
+
+.section-title p {
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: var(--card);
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  border: 1px solid #e2e8f0;
+}
+
+.card h3 {
+  margin-top: 0;
+  color: var(--navy);
+}
+
+.highlight {
+  background: #ecfdf5;
+  border-left: 6px solid var(--green);
+}
+
+.dashboard {
+  background: var(--navy);
+  color: white;
+}
+
+.dashboard .section-title h2,
+.dashboard .section-title p {
+  color: white;
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 18px;
+}
+
+.metric {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 22px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.metric strong {
+  display: block;
+  font-size: 2rem;
+  color: #bbf7d0;
+}
+
+.cta {
+  text-align: center;
+  background: linear-gradient(135deg, #dcfce7, #eff6ff);
+}
+
+.cta h2 {
+  font-size: 2.5rem;
+  color: var(--navy);
 }
 
 footer {
-    background: #0f172a;
-    color: white;
-    text-align: center;
-    padding: 30px;
+  background: #020617;
+  color: white;
+  padding: 35px 8%;
+  text-align: center;
+}
+
+footer img {
+  height: 60px;
+  width: auto;
+  margin-bottom: 12px;
+  border-radius: 8px;
+}
+
+@media (max-width: 850px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>LearningLens™</h1>
+<nav>
+  <div class="nav-brand">
+    <img src="siii-logo.png" alt="Schmidt Institute logo" />
+    <span>Schmidt Institute for Instructional Innovation</span>
+  </div>
 
-    <p class="tagline">
-        See your students before you teach.
-    </p>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#how">How It Works</a>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
+<header class="hero">
+  <div>
+    <h1>CohortView™</h1>
+    <h2>See your students before you teach.</h2>
     <p>
-        Developed by the Schmidt Institute for Instructional Innovation
+      CohortView helps educators transform formative assessment data into actionable instructional insights.
+      Built by the Schmidt Institute for Instructional Innovation, the platform helps instructors understand
+      student readiness, goals, learning preferences, prior experience, and course-specific knowledge before
+      instruction begins.
     </p>
 
-    <a class="button" href="#">Request a Demo</a>
-    <a class="button" href="#">Join the Waitlist</a>
+    <div class="buttons">
+      <a href="#contact" class="button primary">Request a Demo</a>
+      <a href="#about" class="button secondary">Learn More</a>
+    </div>
+  </div>
+
+  <div class="hero-logo">
+    <img src="cohortview-logo.png" alt="CohortView logo" />
+  </div>
 </header>
 
-<section class="section">
+<section id="about">
+  <div class="section-title">
+    <h2>Instructional intelligence for real classrooms</h2>
+    <p>
+      CohortView is designed for instructors, colleges, workforce programs, and schools that want to use
+      student data before the course is already underway.
+    </p>
+  </div>
 
-<h2>Understanding Students Before Instruction Begins</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Student readiness profiles</h3>
+      <p>
+        Students complete a formative assessment that identifies academic confidence, technology readiness,
+        study habits, learning preferences, career goals, and prior experience.
+      </p>
+    </div>
 
-<p>
-LearningLens transforms formative assessment data into actionable
-instructional insights. Educators gain a deeper understanding of
-student readiness, learning preferences, educational goals,
-career aspirations, and content knowledge before instruction starts.
-</p>
+    <div class="card">
+      <h3>Instructor-edited content questions</h3>
+      <p>
+        Instructors can customize course-specific questions while the larger readiness framework remains
+        consistent for meaningful reporting.
+      </p>
+    </div>
 
+    <div class="card">
+      <h3>Actionable teaching insights</h3>
+      <p>
+        Results are translated into dashboard metrics that help faculty plan instruction, identify gaps,
+        and support students earlier.
+      </p>
+    </div>
+  </div>
 </section>
 
-<section class="section">
+<section id="how">
+  <div class="section-title">
+    <h2>How CohortView works</h2>
+    <p>
+      The platform connects formative assessment, student profiling, instructional analytics, and faculty
+      development into one clear process.
+    </p>
+  </div>
 
-<h2>How It Works</h2>
+  <div class="cards">
+    <div class="card highlight">
+      <h3>1. Students complete the assessment</h3>
+      <p>
+        Students answer questions about readiness, learning preferences, goals, experience, and course content.
+      </p>
+    </div>
 
-<div class="cards">
+    <div class="card highlight">
+      <h3>2. CohortView analyzes results</h3>
+      <p>
+        The system organizes student data into individual and cohort-level instructional insights.
+      </p>
+    </div>
 
-<div class="card">
-<h3>1. Assess</h3>
-<p>Students complete a formative assessment.</p>
-</div>
+    <div class="card highlight">
+      <h3>3. Instructors view KPI dashboards</h3>
+      <p>
+        Faculty see class trends, readiness indicators, content gaps, and recommended instructional responses.
+      </p>
+    </div>
 
-<div class="card">
-<h3>2. Analyze</h3>
-<p>LearningLens generates readiness and learning profiles.</p>
-</div>
-
-<div class="card">
-<h3>3. Act</h3>
-<p>Faculty receive KPI dashboards and intervention recommendations.</p>
-</div>
-
-</div>
-
+    <div class="card highlight">
+      <h3>4. Faculty adapt instruction</h3>
+      <p>
+        Instructors use the data to adjust examples, resources, remediation, media formats, and support strategies.
+      </p>
+    </div>
+  </div>
 </section>
 
-<section class="section">
+<section id="dashboard" class="dashboard">
+  <div class="section-title">
+    <h2>KPI dashboard preview</h2>
+    <p>
+      CohortView is being designed to help instructors quickly identify who their students are and what they need.
+    </p>
+  </div>
 
-<h2>Solutions</h2>
+  <div class="metric-grid">
+    <div class="metric">
+      <strong>82%</strong>
+      Assessment completion
+    </div>
 
-<div class="cards">
+    <div class="metric">
+      <strong>64%</strong>
+      Prefer video or visual content
+    </div>
 
-<div class="card">
-<h3>Instructional Intelligence</h3>
-<p>Transform assessment data into instructional action.</p>
-</div>
+    <div class="metric">
+      <strong>41%</strong>
+      Need support with course vocabulary
+    </div>
 
-<div class="card">
-<h3>Faculty Development</h3>
-<p>Train educators to use learning analytics effectively.</p>
-</div>
+    <div class="metric">
+      <strong>37%</strong>
+      New to the subject area
+    </div>
+  </div>
+</section>
 
-<div class="card">
-<h3>Institutional Insights</h3>
-<p>Support student success initiatives through data-informed teaching.</p>
-</div>
+<section>
+  <div class="section-title">
+    <h2>Faculty development built into the model</h2>
+    <p>
+      Data only matters when instructors know how to use it. The Schmidt Institute will provide training
+      materials and professional development courses that help educators turn CohortView insights into
+      instructional action.
+    </p>
+  </div>
 
-</div>
+  <div class="cards">
+    <div class="card">
+      <h3>Using readiness data</h3>
+      <p>Training for interpreting student profiles and planning early interventions.</p>
+    </div>
 
+    <div class="card">
+      <h3>Designing adaptive instruction</h3>
+      <p>Support for aligning content delivery with student strengths, needs, and goals.</p>
+    </div>
+
+    <div class="card">
+      <h3>Teaching with KPIs</h3>
+      <p>Professional development on using dashboard results for informed, equitable teaching.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="cta">
+  <h2>Bring CohortView to your course, program, or institution.</h2>
+  <p>
+    CohortView is currently in early development. To learn more, request a demo, or discuss pilot opportunities,
+    contact the Schmidt Institute for Instructional Innovation.
+  </p>
+
+  <div class="buttons">
+    <a class="button primary" href="mailto:sam@schmidtinstitute.com">Email Sam</a>
+    <a class="button secondary" href="mailto:hello@schmidtinstitute.com">Request Information</a>
+  </div>
 </section>
 
 <footer>
-
-<p>
-Schmidt Institute for Instructional Innovation
-</p>
-
-<p>
-LearningLens™
-</p>
-
+  <img src="siii-logo.png" alt="Schmidt Institute logo" />
+  <p>Schmidt Institute for Instructional Innovation</p>
+  <p>CohortView™ | See your students before you teach.</p>
 </footer>
 
 </body>
