@@ -40,27 +40,26 @@ a {
 }
 
 .navbar {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
-  padding: 16px 24px;
+  padding: 18px 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 24px;
+  gap: 28px;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 24px;
   text-decoration: none;
 }
 
 .brand img {
-  height: 90px;
+  height: 150px;
   width: auto;
-  border-radius: 10px;
-  background: var(--white);
+  display: block;
 }
 
 .brand-text {
@@ -69,11 +68,13 @@ a {
   font-weight: 800;
   color: var(--navy);
   line-height: 1.2;
+  font-size: 1.5rem;
 }
 
 .brand-text small {
   font-weight: 600;
   color: var(--muted);
+  font-size: 1rem;
 }
 
 .nav-links {
@@ -100,11 +101,11 @@ a {
 }
 
 .founder-inner {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 48px;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
   align-items: center;
 }
 
@@ -120,15 +121,16 @@ a {
 }
 
 .logo-panel {
-  background: var(--white);
-  border-radius: 24px;
-  padding: 28px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
 }
 
 .logo-panel img {
   display: block;
-  border-radius: 16px;
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
 }
 
 .button-row {
@@ -306,10 +308,8 @@ a {
 }
 
 .footer img {
-  height: 90px;
+  height: 140px;
   width: auto;
-  background: var(--white);
-  border-radius: 12px;
   margin-bottom: 16px;
 }
 
@@ -336,6 +336,10 @@ a {
   }
 
   .brand img {
-    height: 75px;
+    height: 110px;
+  }
+
+  .brand-text {
+    font-size: 1.2rem;
   }
 }
