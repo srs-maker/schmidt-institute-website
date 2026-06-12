@@ -308,9 +308,10 @@ a {
 }
 
 .footer img {
-  height: 140px;
+  height: 320px;
   width: auto;
-  margin-bottom: 16px;
+  display: block;
+  margin: 0 auto 20px auto;
 }
 
 @media (max-width: 900px) {
