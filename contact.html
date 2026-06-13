@@ -5,6 +5,73 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact | Schmidt Institute for Instructional Innovation</title>
 <link rel="stylesheet" href="style.css">
+
+<style>
+.contact-form-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 22px;
+  padding: 32px;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.10);
+}
+
+.contact-form {
+  display: grid;
+  gap: 16px;
+}
+
+.contact-form label {
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: -8px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #16a34a;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.contact-info-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 22px;
+  padding: 28px;
+  margin-top: 24px;
+}
+
+.contact-info-box h3 {
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 800px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -39,7 +106,7 @@ Schmidt Institute
 <h1>Contact Us</h1>
 
 <p>
-Interested in CohortView™, consulting services, faculty development, speaking engagements, research collaboration, or future courses? We'd love to hear from you.
+Start a conversation about consulting, professional learning, CohortView™, pilot partnerships, speaking engagements, research collaboration, or future courses.
 </p>
 
 </div>
@@ -52,53 +119,53 @@ Interested in CohortView™, consulting services, faculty development, speaking 
 
 <div>
 
-<h2>Get In Touch</h2>
+<div class="section-heading">
+<h2>Get in Touch</h2>
+<p>
+The Schmidt Institute partners with educators, institutions, districts, workforce programs, adult education providers, and training organizations seeking practical instructional innovation.
+</p>
+</div>
 
 <p>
-The Schmidt Institute for Instructional Innovation partners with educators, colleges, universities, workforce development programs, K-12 districts, adult education providers, and corporate learning teams.
+Whether you are interested in a CohortView™ pilot, professional development, consulting support, or future courses, we welcome the conversation.
 </p>
 
-<p>
-Whether you are interested in a pilot project, professional development, consulting support, or learning more about CohortView™, we welcome the conversation.
-</p>
-
-<div class="contact-card">
-
+<div class="contact-info-box">
 <h3>Email</h3>
 <p>info@schmidtinstitute.com</p>
 
 <h3>Location</h3>
 <p>California, United States</p>
 
-<h3>Focus Areas</h3>
-
-<ul class="list">
-<li>Instructional Intelligence</li>
-<li>CohortView™ Platform</li>
-<li>Faculty Development</li>
-<li>Educational Technology</li>
-<li>AI in Education</li>
-<li>Competency-Based Education</li>
-<li>Workforce Development</li>
-<li>Student Success Initiatives</li>
-</ul>
-
+<h3>Typical Response Time</h3>
+<p>We strive to respond to inquiries within two business days.</p>
 </div>
 
 </div>
 
-<div>
+<div class="contact-form-card">
+
+<h2 style="margin-top:0;">Send an Inquiry</h2>
+<p>
+Use the form below to share your interest, organization, and goals.
+</p>
 
 <form class="contact-form" action="https://formspree.io/f/mdavpdog" method="POST">
 
+<div class="form-row">
+<div>
 <label>Name</label>
-<input type="text" name="name" placeholder="Your Name" required>
+<input type="text" name="name" placeholder="Your name" required>
+</div>
 
+<div>
 <label>Email</label>
-<input type="email" name="email" placeholder="Your Email" required>
+<input type="email" name="email" placeholder="Your email" required>
+</div>
+</div>
 
 <label>Organization</label>
-<input type="text" name="organization" placeholder="College, University, District, or Company">
+<input type="text" name="organization" placeholder="College, university, district, program, or company">
 
 <label>Inquiry Type</label>
 <select name="inquiry_type" required>
@@ -113,7 +180,7 @@ Whether you are interested in a pilot project, professional development, consult
 </select>
 
 <label>Message</label>
-<textarea name="message" rows="8" placeholder="Tell us about your project, goals, or questions." required></textarea>
+<textarea name="message" rows="7" placeholder="Tell us about your project, goals, or questions." required></textarea>
 
 <input type="hidden" name="_subject" value="New Schmidt Institute Website Inquiry">
 
@@ -134,35 +201,32 @@ Send Inquiry
 <div class="container">
 
 <div class="section-heading">
-
-<h2>Interested in CohortView™?</h2>
-
+<h2>What Are You Interested In?</h2>
 <p>
-We are currently seeking pilot partners interested in helping shape the future of instructional intelligence and student readiness analytics.
+Select the option that best fits your goals when completing the inquiry form.
 </p>
-
 </div>
 
 <div class="grid-3">
 
 <div class="card">
-<h3>Community Colleges</h3>
+<h3>CohortView™</h3>
 <p>
-Explore how CohortView™ can support student success, retention, and instructional planning.
+Request information about demos, pilot partnerships, early access, or future implementation opportunities.
 </p>
 </div>
 
 <div class="card">
-<h3>Universities</h3>
+<h3>Consulting</h3>
 <p>
-Improve learner insights and strengthen instructional decision-making before courses begin.
+Explore support for instructional innovation, student success strategy, AI integration, CBE, assessment, or faculty development.
 </p>
 </div>
 
 <div class="card">
-<h3>Workforce Programs</h3>
+<h3>Professional Learning</h3>
 <p>
-Better understand learner readiness, career goals, and workforce skill development needs.
+Ask about upcoming courses, workshops, institutional training, certificates, and custom learning opportunities.
 </p>
 </div>
 
@@ -175,43 +239,42 @@ Better understand learner readiness, career goals, and workforce skill developme
 <div class="container">
 
 <div class="section-heading">
-
-<h2>Ways We Can Collaborate</h2>
-
+<h2>Who We Work With</h2>
 <p>
-The Schmidt Institute supports organizations through consulting, professional learning, innovation initiatives, and educational technology development.
-</p>
-
-</div>
-
-<div class="grid-2">
-
-<div class="card card-accent">
-<h3>Consulting & Strategic Planning</h3>
-<p>
-Support for educational innovation, student success initiatives, instructional improvement, workforce development, and organizational growth.
+The Schmidt Institute supports learning organizations across education, workforce development, and training.
 </p>
 </div>
 
+<div class="grid-3">
+
 <div class="card card-accent">
-<h3>Professional Learning</h3>
-<p>
-Customized workshops, conference presentations, faculty development, AI training, and instructional innovation programs.
-</p>
+<h3>K-12 Districts</h3>
+<p>Instructional planning, responsible AI use, student support, and professional learning.</p>
 </div>
 
 <div class="card card-accent">
-<h3>Research & Evaluation</h3>
-<p>
-Collaboration on educational research, pilot programs, grant initiatives, and program assessment projects.
-</p>
+<h3>Community Colleges & Universities</h3>
+<p>Faculty development, student success, readiness analytics, CTE, CBE, and instructional innovation.</p>
 </div>
 
 <div class="card card-accent">
-<h3>Technology Innovation</h3>
-<p>
-Partnership opportunities related to CohortView™, instructional intelligence, and emerging educational technologies.
-</p>
+<h3>Workforce & Adult Education</h3>
+<p>Skills-based learning, career readiness, learner support, and workforce-aligned training design.</p>
+</div>
+
+<div class="card card-accent">
+<h3>Corporate Training</h3>
+<p>Employee learning, readiness assessment, skill development, instructional design, and training evaluation.</p>
+</div>
+
+<div class="card card-accent">
+<h3>Conference & Event Teams</h3>
+<p>Speaking engagements, workshops, presentations, faculty development days, and leadership sessions.</p>
+</div>
+
+<div class="card card-accent">
+<h3>Innovation Teams</h3>
+<p>Technology pilots, grant-funded initiatives, research collaboration, and educational product development.</p>
 </div>
 
 </div>
@@ -222,10 +285,10 @@ Partnership opportunities related to CohortView™, instructional intelligence, 
 <section class="section cta">
 <div class="container">
 
-<h2>Let's Build the Future of Learning Together</h2>
+<h2>Let’s build more responsive learning experiences.</h2>
 
 <p>
-From instructional intelligence to faculty development and student success, the Schmidt Institute is committed to helping educators make more informed decisions that improve outcomes.
+Connect with the Schmidt Institute to discuss instructional innovation, professional learning, CohortView™, consulting, or partnership opportunities.
 </p>
 
 <div class="button-row" style="justify-content:center;">
@@ -236,17 +299,10 @@ From instructional intelligence to faculty development and student success, the 
 </div>
 </section>
 
-<footer class="footer">
-<img src="siii-logo-new.png" alt="SIII Logo" style="width:320px;">
-
-<p>
-Schmidt Institute for Instructional Innovation
-</p>
-
-<p>
-Advancing instructional intelligence, educational innovation, and student success.
-</p>
-
+<footer class="footer compact-footer">
+<img src="siii-logo-new.png" alt="SIII Logo">
+<p>Schmidt Institute for Instructional Innovation</p>
+<p>Advancing instructional intelligence, educational innovation, and student success.</p>
 </footer>
 
 </body>
