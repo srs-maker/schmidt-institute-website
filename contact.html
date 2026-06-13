@@ -169,6 +169,7 @@ Use the form below to share your interest, organization, and goals.
 
 <select name="inquiry_type" id="inquiry_type" required>
 <option value="General Information">General Information</option>
+<option value="Schedule a Consultation">Schedule a Consultation</option>
 <option value="CohortView™ Demo Request">CohortView™ Demo Request</option>
 <option value="CohortView™ Pilot Partner">CohortView™ Pilot Partner</option>
 <option value="CohortView™ Early Access Interest">CohortView™ Early Access Interest</option>
@@ -311,6 +312,7 @@ const interest = params.get("interest");
 const inquiryType = document.getElementById("inquiry_type");
 
 const interestMap = {
+  "consultation": "Schedule a Consultation",
   "demo": "CohortView™ Demo Request",
   "pilot": "CohortView™ Pilot Partner",
   "early-access": "CohortView™ Early Access Interest",
