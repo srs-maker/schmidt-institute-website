@@ -167,16 +167,17 @@ Use the form below to share your interest, organization, and goals.
 <label>Organization</label>
 <input type="text" name="organization" placeholder="College, university, district, program, or company">
 
-<label>Inquiry Type</label>
-<select name="inquiry_type" required>
-<option>General Information</option>
-<option>CohortView™ Demo</option>
-<option>Pilot Partnership</option>
-<option>Consulting Services</option>
-<option>Professional Development</option>
-<option>Speaking Engagement</option>
-<option>Research Collaboration</option>
-<option>Course Information</option>
+<select name="inquiry_type" id="inquiry_type" required>
+<option value="General Information">General Information</option>
+<option value="CohortView™ Demo Request">CohortView™ Demo Request</option>
+<option value="CohortView™ Pilot Partner">CohortView™ Pilot Partner</option>
+<option value="CohortView™ Early Access Interest">CohortView™ Early Access Interest</option>
+<option value="Consulting Services">Consulting Services</option>
+<option value="Professional Development">Professional Development</option>
+<option value="Course Updates">Course Updates</option>
+<option value="Resource Updates">Resource Updates</option>
+<option value="Speaking Engagement">Speaking Engagement</option>
+<option value="Research Collaboration">Research Collaboration</option>
 </select>
 
 <label>Message</label>
@@ -304,6 +305,26 @@ Connect with the Schmidt Institute to discuss instructional innovation, professi
 <p>Schmidt Institute for Instructional Innovation</p>
 <p>Advancing instructional intelligence, educational innovation, and student success.</p>
 </footer>
+<script>
+const params = new URLSearchParams(window.location.search);
+const interest = params.get("interest");
+const inquiryType = document.getElementById("inquiry_type");
 
+const interestMap = {
+  "demo": "CohortView™ Demo Request",
+  "pilot": "CohortView™ Pilot Partner",
+  "early-access": "CohortView™ Early Access Interest",
+  "consulting": "Consulting Services",
+  "professional-learning": "Professional Development",
+  "course-updates": "Course Updates",
+  "resource-updates": "Resource Updates",
+  "speaking": "Speaking Engagement",
+  "research": "Research Collaboration"
+};
+
+if (interest && interestMap[interest]) {
+  inquiryType.value = interestMap[interest];
+}
+</script>
 </body>
 </html>
